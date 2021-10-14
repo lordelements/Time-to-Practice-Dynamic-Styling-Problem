@@ -2,7 +2,7 @@
 const app = Vue.createApp({
     data() {
      return {
-        visible:true,
+        showandvisible:false,
         styleme: '',
         stylemeInline: '',
         color: '#683AB6',
@@ -19,6 +19,9 @@ const app = Vue.createApp({
         },
         confirmedInput(){
             this.stylemeEnter = this.styleme;
+        },
+        toggleParagraph() {
+            this.showandvisible = !this.showandvisible;
         }
         
     },

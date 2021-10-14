@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Dynamic Styling</title>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,15 +10,16 @@
         <h1>Vue Styling</h1>
     </header>
     <section id="assignment">
-        <input type="text" @input="setparagraph" v-on:keyup.enter="confirmedInput">
-        <p v-if:class="visible">style me! {{ stylemeEnter }} </p>
-        <button @click="visible = !visible">Toggle Paragraph</button>
+        
+        <input  type="text" @input="setparagraph" v-on:keyup.enter="confirmedInput">
+        <p v-if="showandvisible" >style me! {{ stylemeEnter }} </p>
+        <button @click="toggleParagraph">{{showandvisible ? 'Hide' : 'Show' }}Toggle Paragraph</button>
         <!-- Input Color background -->
         <input type="text" @input="setstyleColor"
          v-bind:style="{color: color}"
          v-model="color" maxlength="12" placeholder="Enter Color">
         <p v-bind:style="{backgroundColor: color}">Style me inline! {{ stylemeInline }}</p>
     </section>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
